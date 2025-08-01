@@ -1,4 +1,4 @@
-import { CardCounter } from "@/app/shoping-cart";
+import { CardCounter } from "@/shoping-cart";
 
 export const metadata = {
   title: "Shoping Cart",
