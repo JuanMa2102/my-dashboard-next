@@ -12,6 +12,11 @@ interface Props {
   }>;
 }
 
+export async function generateStaticParams() {
+  const statickPokemons = Array.from({ length: 150 }).map((_, index) => `${index + 1}`);
+  return statickPokemons.map((id) => ({ id }))
+}
+
 export async function generateMetadata({params} : Props): Promise<Metadata> {
   try{
     const { id } = await params;
