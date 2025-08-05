@@ -1,1 +1,2 @@
-export {Sidebar} from "./sidebar";
+export { SimpleWidget } from './SimpleWidget';
+export { Sidebar } from "./sidebar";
