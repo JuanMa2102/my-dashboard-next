@@ -4,7 +4,7 @@ import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux'
 
 export const store = configureStore({
   reducer: {
-    counterReducer,
+    counter: counterReducer,
   },
 })
 
