@@ -1,5 +1,7 @@
 'use client';
-import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "@/store";
+import { addOne, removeOne, initCounterState } from "@/store/counter/counterSlice";
+import { useEffect } from "react";
 
 interface Props {
   initialCount?: number;
@@ -7,18 +9,23 @@ interface Props {
 
 
 export const CardCounter = ( {initialCount = 0}: Props ) => {
-    const [count, setCount] = useState(initialCount);
+    const count = useAppSelector(state => state.counter.count);
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+      dispatch( initCounterState(initialCount) );
+    }, [dispatch, initialCount])
     
   return (
     <>
     <span className="text-9xl">{count}</span>
     <div className="flex space-x-4 mt-6">
         <button className="flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200"
-          onClick={ () => setCount(count + 1) }>
+          onClick={ () => dispatch( addOne() ) }>
           +1
         </button>
         <button className="flex items-center justify-center px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition duration-200 ml-4"
-          onClick={ () => setCount(count - 1 )}
+          onClick={ () => dispatch( removeOne() ) }
         >
           -1
         </button>
