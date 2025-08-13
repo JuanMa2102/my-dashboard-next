@@ -21,7 +21,7 @@ const getApiCounter = async (): Promise<CounterResponse> => {
 export const CardCounter = ( {initialCount = 0}: Props ) => {
     const count = useAppSelector(state => state.counter.count);
     const dispatch = useAppDispatch();
-
+    console.log(initialCount);
     // useEffect(() => {
     //   dispatch( initCounterState(initialCount) );
     // }, [dispatch, initialCount])
