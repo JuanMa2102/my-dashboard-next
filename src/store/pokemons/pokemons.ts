@@ -6,7 +6,7 @@ interface PokemonFavoriteState {
 }
 
 const initialState : PokemonFavoriteState = {
-    '1': { id: '1', name: 'pikachu', url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png' }
+    '1': {id:"1",name:"bulbasaur",url:"https://pokeapi.co/api/v2/pokemon/1/"}
 }
 
 const pokemonsSlice = createSlice({
