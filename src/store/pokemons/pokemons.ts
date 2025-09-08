@@ -6,7 +6,7 @@ interface PokemonFavoriteState {
 }
 
 const initialState : PokemonFavoriteState = {
-    '1': {id:"1",name:"bulbasaur",url:"https://pokeapi.co/api/v2/pokemon/1/"}
+    // '1': {id:"1",name:"bulbasaur",url:"https://pokeapi.co/api/v2/pokemon/1/"}
 }
 
 const pokemonsSlice = createSlice({
@@ -22,6 +22,8 @@ const pokemonsSlice = createSlice({
         }else{
             state[id] = pokemon;
         }
+
+        localStorage.setItem('favorite-pokemons', JSON.stringify(state));
     }
   }
 });
