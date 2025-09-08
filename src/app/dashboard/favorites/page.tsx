@@ -1,6 +1,5 @@
 import { FavoritePokemons } from "@/pokemons/components/FavoritePokemons";
 
-
 export const metadata = {
     title: 'Favoritos',  
     description: 'Listado de pokemons',
